@@ -7,4 +7,10 @@ const sequelize = new Sequelize({
   logging: console.log,
 });
 
+sequelize.sync({ force: false }) 
+.then(() => {
+  console.log('Models synchronized with the database.');
+})
+.catch((error) => console.error('Error syncing database:', error));
+
 export default sequelize;
