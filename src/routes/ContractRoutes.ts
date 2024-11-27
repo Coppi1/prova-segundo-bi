@@ -1,6 +1,5 @@
 import express from 'express';
 import ContractController from '../controllers/ContractController';
-import { asyncHandler } from '../config/asyncHandler';  // Importe o asyncHandler
 
 const router = express.Router();
 

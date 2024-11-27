@@ -20,11 +20,6 @@ class ContractController {
 
       console.log("Fetching contracts for clientId:", parsedClientId);
 
-      // const contracts = await Contract.findAll({
-      //   where: { clientId: parsedClientId },
-      //   order: [['operationDatetime', 'DESC']],
-      // });
-
       const contracts = await sequelize.query(
         "SELECT * FROM contract WHERE client_id = :clientId ORDER BY operation_datetime DESC",
         {

@@ -4,7 +4,7 @@ import "./models/associations"; // Supondo que você tem associações definidas
 // import clientRoutes from "./routes/clientRoutes";
 import contractRoutes from "./routes/ContractRoutes";
 // import contractorRoutes from "./routes/contractorRoutes";
-// import depositRoutes from "./routes/depositRoutes";
+import depositRoutes from "./routes/DepositRoutes";
 // import jobRoutes from "./routes/jobRoutes";
 // import paymentRoutes from "./routes/paymentRoutes";
 import sequelize from "./shared/connection";
@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
 // Registro das rotas
 //app.use("/clients", clientRoutes);
 app.use(contractRoutes);
+app.use(depositRoutes);
 // app.use("/contractors", contractorRoutes);
 // app.use("/deposits", depositRoutes);
 // app.use("/jobs", jobRoutes);
@@ -42,6 +43,12 @@ app.use(contractRoutes);
 
     await sequelize.sync({ alter: true }); 
     console.log("Models synchronized with the database.");
+
+    // sequelize.sync({ force: false }) 
+    //   .then(() => {
+    //     console.log('Models synchronized with the database.');
+    //   })
+    //   .catch((error) => console.error('Error syncing database:', error));
 
     app.listen(PORT, () => {
       console.log(`Server listening on port ${PORT}`);
