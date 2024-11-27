@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2020",                                  /* Definir suporte para recursos modernos do ES2020. */
+    "lib": ["ES2020"],                                   /* Inclui apenas as bibliotecas necessárias para o ambiente Node.js. */
+    "module": "commonjs",                                /* Define o sistema de módulos como CommonJS. */
+    "moduleResolution": "node",                         /* Resolve módulos no estilo Node.js. */
+    "esModuleInterop": true,                             /* Suporte para interoperabilidade com módulos CommonJS. */
+    "forceConsistentCasingInFileNames": true,            /* Garante a consistência de maiúsculas/minúsculas nos imports. */
+    "resolveJsonModule": true,                           /* Permite a importação de arquivos JSON. */
+
+    /* Output Options */
+    "outDir": "./dist",                                  /* Diretório de saída para arquivos compilados. */
+    "rootDir": "./src",                                  /* Define o diretório raiz dos arquivos TypeScript. */
+
+    /* Type Checking */
+    "strict": true,                                      /* Habilita todos os checks de tipo estrito. */
+    "skipLibCheck": true,                                /* Ignora verificações de tipo em arquivos de declaração. */
+
+    /* Experimental Options */
+    "experimentalDecorators": true,                     /* Necessário se forem usados decorators. */
+    "emitDecoratorMetadata": true                       /* Emite metadados para decorators (necessário com alguns frameworks). */
+  },
+  "include": ["src"],                                    /* Define os arquivos/folders incluídos na compilação. */
+  "exclude": ["node_modules", "dist"]                   /* Exclui pastas não necessárias. */
+}
